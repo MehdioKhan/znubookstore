@@ -1,0 +1,23 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+      Hi {{ user.username }}!
+      <p><a href="{% url 'logout' %}">logout</a></p>
+  {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">login</a>
+  {% endif %}
+{% endblock %}
+{% block category %}
+    <h3 class="subtitle">دسته ها</h3>
+    <div class="box-category">
+        <ul id="cat_accordion">
+            {% for c in cat_list %}
+                <li><a href="category.html">{{ c.name }}</a> <span class="down"></span></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

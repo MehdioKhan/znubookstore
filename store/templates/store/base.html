@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="image/favicon.png" rel="icon" />
+<title>{% block title %}فروشگاه کتاب دانشگاه زنجان{% endblock %}</title>
+<meta name="description" content="فروشگاه کتاب دانشگاه زنجان">
+<!-- CSS Part Start-->
+<link rel="stylesheet" type="text/css" href={% static 'store/js/bootstrap/css/bootstrap.min.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/js/bootstrap/css/bootstrap-rtl.min.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/font-awesome/css/font-awesome.min.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/stylesheet.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/owl.carousel.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/owl.transitions.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/responsive.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/stylesheet-rtl.css' %} />
+<link rel="stylesheet" type="text/css" href={% static 'store/css/responsive-rtl.css' %} />
+<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+<!-- CSS Part End-->
+</head>
+<body>
+<div class="wrapper-wide">
+  <div id="header">
+    <!-- Top Bar Start-->
+    <nav id="top" class="htop">
+      <div class="container">
+        <div class="row"> <span class="drop-icon visible-sm visible-xs"><i class="fa fa-align-justify"></i></span>
+          <div class="pull-left flip left-top">
+            <div class="links">
+              <ul>
+                <li class="mobile"><i class="fa fa-phone"></i>+21 9898777656</li>
+                <li class="email"><a href="mailto:info@marketshop.com"><i class="fa fa-envelope"></i>info@marketshop.com</a></li>
+                <li><a href="#">لیست علاقه مندی (0)</a></li>
+                <li><a href="checkout.html">تسویه حساب</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="top-links" class="nav pull-right flip">
+            <ul>
+              <li><a href={% url 'login' %}>ورود</a></li>
+              <li><a href="register.html">ثبت نام</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Top Bar End-->
+    <!-- Header Start-->
+    <header class="header-row">
+      <div class="container">
+        <div class="table-container">
+          <!-- Logo Start -->
+          <div class="col-table-cell col-lg-6 col-md-6 col-sm-12 col-xs-12 inner">
+            <div id="logo"><a href={% url 'index' %}><img class="img-responsive" src="image/logo.png" title="فروشگاه کتاب دانشگاه زنجان" alt="فروشگاه کتاب دانشگاه زنجان" /></a></div>
+          </div>
+          <!-- Logo End -->
+          <!-- جستجو Start-->
+          <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
+            <div id="search" class="input-group">
+              <input id="filter_name" type="text" name="search" value="" placeholder="جستجو" class="form-control input-lg" />
+              <button type="button" class="button-search"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          <!-- جستجو End-->
+        </div>
+      </div>
+    </header>
+    <!-- Header End-->
+    <div class="container">
+      <nav id="menu" class="navbar">
+        <div class="navbar-header"> <span class="visible-xs visible-sm"> منو <b></b></span></div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a class="home_link" title="خانه" href={% url 'index' %}><span>خانه</span></a></li>
+            <li class="contact-link"><a href="contact-us.html">تماس با ما</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div id="container">
+    <div class="container">
+      <div class="row">
+        <!-- Left Part Start-->
+        <aside id="column-left" class="col-sm-3 hidden-xs">
+        {% block category %}
+        {% endblock %}
+        </aside>
+        <!-- Left Part End-->
+        <!--Middle Part Start-->
+        <div id="content" class="col-sm-9">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!--Middle Part End-->
+      </div>
+    </div>
+  </div>
+  <!--Footer Start-->
+  <footer id="footer">
+    <div id="back-top"><a data-toggle="tooltip" title="بازگشت به بالا" href="javascript:void(0)" class="backtotop"><i class="fa fa-chevron-up"></i></a></div>
+  </footer>
+  <!--Footer End-->
+</div>
+<!-- JS Part Start-->
+<script type="text/javascript" src={% static 'store/js/jquery-2.1.1.min.js' %}></script>
+<script type="text/javascript" src={% static 'store/js/bootstrap/js/bootstrap.min.js' %}></script>
+<script type="text/javascript" src={% static 'store/js/jquery.easing-1.3.min.js' %}></script>
+<script type="text/javascript" src={% static 'store/js/jquery.dcjqaccordion.min.js' %}></script>
+<script type="text/javascript" src={% static 'store/js/owl.carousel.min.js' %}></script>
+<script type="text/javascript" src={% static 'store/js/custom.js' %}></script>
+<!-- JS Part End-->
+</body>
+</html>

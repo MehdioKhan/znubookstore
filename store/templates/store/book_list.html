@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+{% block content %}
+    {% for b in book_list %}
+        <h1>{{ b.title }}</h1>
+        <h2>{{ b.author }}</h2>
+        <h3>{{ b.translator }}</h3>
+
+    {% endfor %}
+{% endblock %}
