@@ -1,2 +1,1 @@
-Handle Exceptions in views (Use try and use Http404 Exception)
-Notice to teh security
+A simple bookshop for training django, javascript and bootstrap
