@@ -1,23 +1,52 @@
-{% extends 'store/base.html' %}
+{% extends 'store/base.html' %} {% load static %} {% block title %}فروشگاه کتاب دانشگاه زنجان {% endblock %} {% block style%}
+<style>
+    #costume1.a {
+        border: 1px solid green;
+        width: 200px;
+        height: 200px;
+        float: left;
+        margin: 10px;
+        padding: 10px;
 
-{% block title %}Home{% endblock %}
+    }
 
-{% block content %}
-  {% if user.is_authenticated %}
-      Hi {{ user.username }}!
-      <p><a href="{% url 'logout' %}">logout</a></p>
-  {% else %}
-      <p>You are not logged in</p>
-      <a href="{% url 'login' %}">login</a>
-  {% endif %}
-{% endblock %}
-{% block category %}
-    <h3 class="subtitle">دسته ها</h3>
-    <div class="box-category">
-        <ul id="cat_accordion">
-            {% for c in cat_list %}
-                <li><a href="category.html">{{ c.name }}</a> <span class="down"></span></li>
-            {% endfor %}
-        </ul>
+    img {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+{% endblock %} {% block content %} {{q}}
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {%for b in book_list%}
+            <div id="costume">
+                <div id="costume1" class="a">
+                    <img src="{{ b.image.url }}" class="img-responsive"> {{b.title}}
+                </div>
+            </div>
+            {%endfor%}
+        </div>
     </div>
+</div>
+<div class="col-md-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h5>موضوعات</h5>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive">
+                {% for c in cat_list %}
+                <tr>
+                    <td>
+                        <a href="">{{ c.name }}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

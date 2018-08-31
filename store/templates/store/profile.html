@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %} {% block title %}{{ profile.user.username }} پروفایل {% endblock %} {% block content %}
+<center>
+    <div class="panel panel-info" style="width: 600px;">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h4>پروفایل {{ profile.user.username }} </h4>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive">
+                <tr>
+                    <td>نام :</td>
+                    <td>{{ profile.first_name }}</td>
+                </tr>
+                <tr>
+                    <td>نام خانوادگی :</td>
+                    <td>{{ profile.last_name }}</td>
+                </tr>
+                <tr>
+                    <td>ایمیل :</td>
+                    <td>{{ profile.email }}</td>
+                </tr>
+                <tr>
+                    <td>آیدی تلگرام :</td>
+                    <td>{{ profile.telegram_id }}</td>
+                </tr>
+                <tr>
+                    <td>شماره تلفن :</td>
+                    <td>{{ profile.tel_no }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</center>
+{% endblock %}

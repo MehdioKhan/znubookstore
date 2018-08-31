@@ -1,10 +1,50 @@
-{% extends 'store/base.html' %}
-{% block content %}
-  {% if user.is_authenticated %}
-    <form method="POST" class="post-form">
+{% extends 'store/base.html' %} {% load widget_tweaks %} {% block style %}
+<style>
+  td {
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+</style>
+</style>{% endblock %} {% block content %} {% if user.is_authenticated %}
+<center>
+  <div class="panel panel-info" style="width: 600px;">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h4>{{title}}</h4>
+      </div>
+    </div>
+    <div class="panel-body">
+      <form method="POST" class="form-horizontal" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="Submit" class="save btn btn-default">Save</button>
-    </form>
-  {% endif %}
-{% endblock %}
+        <table class="table-responsive">
+          <tr>
+            <td>عنوان</td>
+            <td>{{form.title|add_class:'form-control'}}</td>
+          </tr>
+          <tr>
+            <td>نویسنده</td>
+            <td>{{form.author|add_class:'form-control'}}</td>
+          </tr>
+          <tr>
+            <td>مترجم</td>
+            <td>{{form.translator|add_class:'form-control'}}</td>
+          </tr>
+          <tr>
+            <td>سال انتشار</td>
+            <td>{{form.publish_year|add_class:'form-control'}}</td>
+          </tr>
+          <tr>
+            <td>دسته بندی</td>
+            <td>{{form.category|add_class:'form-control'}}</td>
+          </tr>
+          <tr>
+            <td>تصویر</td>
+            <td>{{form.image|add_class:'form-control'}}</td>
+          </tr>
+        </table>
+        <button type="Submit" class="save btn btn-default">ذخیره</button>
+      </form>
+    </div>
+  </div>
+</center>
+{% endif %} {% endblock %}

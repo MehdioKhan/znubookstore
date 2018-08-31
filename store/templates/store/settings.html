@@ -1,0 +1,44 @@
+{% extends 'store/base.html' %}{% load widget_tweaks %} {% block title %}ویرایش پروفایل{% endblock %} {% block content %}
+
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>ویرایش پروفایل </h4>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form method="POST" class="form form-horizontal">
+                    {% csrf_token %}
+                    <table class="table table-responsive">
+                        <tr>
+                            <td>نام :</td>
+                            <td>{{ form.first_name|add_class:'form-control' }}</td>
+                        </tr>
+                        <tr>
+                            <td>نام خانوادگی :</td>
+                            <td>{{ form.last_name|add_class:'form-control' }}</td>
+                        </tr>
+                        <tr>
+                            <td>ایمیل :</td>
+                            <td>{{ form.email|add_class:'form-control' }}</td>
+                        </tr>
+                        <tr>
+                            <td>آیدی تلگرام :</td>
+                            <td>{{ form.telegram_id|add_class:'form-control' }}</td>
+                        </tr>
+                        <tr>
+                            <td>شماره تلفن :</td>
+                            <td>{{ form.tel_no|add_class:'form-control' }}</td>
+                        </tr>
+                    </table>
+                    <center>
+                        <button type="submit" class="btn btn-default">ذخیره</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
