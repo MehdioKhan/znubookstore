@@ -9,7 +9,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = ""
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nbhimqh^l=g=j8uc!txk0ip+^a=z61x4tj-7w0agzferwnvo66'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
